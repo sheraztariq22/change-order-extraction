@@ -1,0 +1,144 @@
+{
+  "source": "co_001_clean.txt",
+  "fields": {
+    "change_order_number": {
+      "value": "007",
+      "confidence": 0.94,
+      "evidence": "Change Order No.: 007  Date: March 14, 2024",
+      "line": 3,
+      "issues": []
+    },
+    "project_name": {
+      "value": "Riverside Medical Office Building",
+      "confidence": 0.92,
+      "evidence": "Project: Riverside Medical Office Building  Project No: 2023-114",
+      "line": 4,
+      "issues": []
+    },
+    "project_number": {
+      "value": "2023-114",
+      "confidence": 0.92,
+      "evidence": "Project: Riverside Medical Office Building  Project No: 2023-114",
+      "line": 4,
+      "issues": []
+    },
+    "date": {
+      "value": "2024-03-14",
+      "confidence": 0.93,
+      "evidence": "Change Order No.: 007  Date: March 14, 2024",
+      "line": 3,
+      "issues": []
+    },
+    "owner": {
+      "value": "Riverside Health Partners",
+      "confidence": 0.92,
+      "evidence": "Owner: Riverside Health Partners",
+      "line": 5,
+      "issues": []
+    },
+    "contractor": {
+      "value": "Atlas Construction Group, LLC",
+      "confidence": 0.92,
+      "evidence": "Contractor: Atlas Construction Group, LLC",
+      "line": 6,
+      "issues": []
+    },
+    "description": {
+      "value": "Furnish and install additional fire-rated drywall at corridor 2B per RFI-045, and relocate two electrical panels to the east wall.",
+      "confidence": 0.92,
+      "evidence": "Description of Change:",
+      "line": 8,
+      "issues": []
+    },
+    "reason_for_change": {
+      "value": "Owner-directed scope change following code review.",
+      "confidence": 0.92,
+      "evidence": "Reason for Change: Owner-directed scope change following code review.",
+      "line": 12,
+      "issues": []
+    },
+    "original_contract_sum": {
+      "value": 1250000.0,
+      "confidence": 0.95,
+      "evidence": "The original Contract Sum was ........................ $1,250,000.00",
+      "line": 18,
+      "issues": []
+    },
+    "prior_change_orders_total": {
+      "value": 45200.0,
+      "confidence": 0.93,
+      "evidence": "Net change by previously authorized Change Orders .... $45,200.00",
+      "line": 19,
+      "issues": []
+    },
+    "change_amount": {
+      "value": 22825.0,
+      "confidence": 0.99,
+      "evidence": "The Contract Sum will be increased by this Change Order in the amount of $22,825.00",
+      "line": 21,
+      "issues": [
+        "sign_from_phrase:increased"
+      ]
+    },
+    "revised_contract_sum": {
+      "value": 1318025.0,
+      "confidence": 0.95,
+      "evidence": "The new Contract Sum including this Change Order will be $1,318,025.00",
+      "line": 22,
+      "issues": []
+    },
+    "schedule_change_days": {
+      "value": 6,
+      "confidence": 0.88,
+      "evidence": "$1,318,025.00  The Contract Time will be increased by 6 calendar days.",
+      "line": 24,
+      "issues": []
+    }
+  },
+  "line_items": [
+    {
+      "description": "Fire-rated drywall, corridor 2B",
+      "amount": 12450.0,
+      "confidence": 0.72,
+      "line": 14
+    },
+    {
+      "description": "Electrical panel relocation",
+      "amount": 8300.0,
+      "confidence": 0.72,
+      "line": 15
+    },
+    {
+      "description": "Overhead and profit (10%)",
+      "amount": 2075.0,
+      "confidence": 0.72,
+      "line": 16
+    }
+  ],
+  "checks": [
+    {
+      "name": "contract_sum_arithmetic",
+      "passed": true,
+      "detail": "1250000.00 + 45200.00 + 22825.00 = 1318025.00 vs stated 1318025.00"
+    },
+    {
+      "name": "line_items_sum_to_change_amount",
+      "passed": true,
+      "detail": "sum(items)=22825.00 vs change_amount=22825.00"
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "detail": "2024-03-14"
+    }
+  ],
+  "warnings": [],
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "overall_confidence": 0.92,
+  "needs_review": false,
+  "review_reasons": []
+}

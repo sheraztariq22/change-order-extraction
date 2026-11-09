@@ -1,0 +1,15 @@
+CHANGE ORDER NUMBER: PCO-0031
+Date of Issuance: 2024-06-02
+Project: Maple Grove Elementary Renovation
+Owner: Maple Grove School District
+Contractor: Keystone Builders
+
+Description:
+Deduct ceramic tile in restrooms; substitute sealed concrete floor
+per owner value-engineering request.
+
+Original Contract Sum:        $2,000,000.00
+Total Deduct:                 $15,000.00
+New Contract Sum:             $2,015,000.00
+
+No change in contract time.

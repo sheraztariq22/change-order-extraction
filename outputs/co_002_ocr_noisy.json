@@ -1,0 +1,137 @@
+{
+  "source": "co_002_ocr_noisy.txt",
+  "fields": {
+    "change_order_number": {
+      "value": "14",
+      "confidence": 0.94,
+      "evidence": "CHANGE ORDER  CO # 14",
+      "line": 1,
+      "issues": []
+    },
+    "project_name": {
+      "value": "Harbor Street Parking Structure",
+      "confidence": 0.92,
+      "evidence": "Project Name: Harbor Street Parking Structure",
+      "line": 3,
+      "issues": []
+    },
+    "project_number": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "date": {
+      "value": "2024-03-04",
+      "confidence": 0.744,
+      "evidence": "Date:  03/04/2024",
+      "line": 2,
+      "issues": [
+        "ambiguous_MM/DD_vs_DD/MM (assumed US)"
+      ]
+    },
+    "owner": {
+      "value": "City of Port Alden",
+      "confidence": 0.92,
+      "evidence": "Owner:  City of Port Alden  Contractor: Beacon Civil Inc.",
+      "line": 4,
+      "issues": []
+    },
+    "contractor": {
+      "value": "Beacon Civil Inc",
+      "confidence": 0.92,
+      "evidence": "Owner:  City of Port Alden  Contractor: Beacon Civil Inc.",
+      "line": 4,
+      "issues": []
+    },
+    "description": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "reason_for_change": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "original_contract_sum": {
+      "value": 4800000.0,
+      "confidence": 0.59,
+      "evidence": "Original Contract Amount  $ 4,8OO,OOO.00",
+      "line": 10,
+      "issues": [
+        "ocr_repair: '4,8OO,OOO.00' -> 4,800,000.00"
+      ]
+    },
+    "prior_change_orders_total": {
+      "value": 112500.0,
+      "confidence": 0.93,
+      "evidence": "Previous Change Orders Total  $ 112,500.00",
+      "line": 11,
+      "issues": []
+    },
+    "change_amount": {
+      "value": 38910.5,
+      "confidence": 0.59,
+      "evidence": "Change Order Amount  $ 38,9l0.50",
+      "line": 12,
+      "issues": [
+        "ocr_repair: '38,9l0.50' -> 38,910.50"
+      ]
+    },
+    "revised_contract_sum": {
+      "value": 4951410.5,
+      "confidence": 0.95,
+      "evidence": "Revised Contract Amount  $ 4,951,410.50",
+      "line": 13,
+      "issues": []
+    },
+    "schedule_change_days": {
+      "value": 10,
+      "confidence": 0.85,
+      "evidence": "$ 4,951,410.50  Time extension: 10 days",
+      "line": 15,
+      "issues": []
+    }
+  },
+  "line_items": [],
+  "checks": [
+    {
+      "name": "contract_sum_arithmetic",
+      "passed": true,
+      "detail": "4800000.00 + 112500.00 + 38910.50 = 4951410.50 vs stated 4951410.50"
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "detail": "2024-03-04"
+    }
+  ],
+  "warnings": [],
+  "validation": {
+    "valid": false,
+    "errors": [
+      "missing_required: description"
+    ],
+    "warnings": []
+  },
+  "overall_confidence": 0.0,
+  "needs_review": true,
+  "review_reasons": [
+    "change_amount",
+    "date",
+    "description",
+    "original_contract_sum"
+  ]
+}

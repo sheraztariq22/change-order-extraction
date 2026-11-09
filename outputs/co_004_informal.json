@@ -1,0 +1,135 @@
+{
+  "source": "co_004_informal.txt",
+  "fields": {
+    "change_order_number": {
+      "value": "22",
+      "confidence": 0.7,
+      "evidence": "Hi team - attaching CO 22 for the Oak Ridge townhomes job.",
+      "line": 1,
+      "issues": []
+    },
+    "project_name": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "project_number": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "date": {
+      "value": "2024-09-05",
+      "confidence": 0.93,
+      "evidence": "Date: 5 Sept 2024",
+      "line": 3,
+      "issues": []
+    },
+    "owner": {
+      "value": "Oakridge Development Partners",
+      "confidence": 0.92,
+      "evidence": "Owner: Oakridge Development Partners",
+      "line": 4,
+      "issues": []
+    },
+    "contractor": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "description": {
+      "value": "swap the specified windows for the upgraded triple-pane units on buildings C and D. Supplier quote attached.",
+      "confidence": 0.92,
+      "evidence": "Scope: swap the specified windows for the upgraded triple-pane units on",
+      "line": 6,
+      "issues": []
+    },
+    "reason_for_change": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "original_contract_sum": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "prior_change_orders_total": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "change_amount": {
+      "value": 64200.0,
+      "confidence": 0.5,
+      "evidence": "Total: $64,200",
+      "line": 9,
+      "issues": []
+    },
+    "revised_contract_sum": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "schedule_change_days": {
+      "value": 14,
+      "confidence": 0.85,
+      "evidence": "ed.  Total: $64,200 Schedule impact: 14 days  Thanks, Mike",
+      "line": 10,
+      "issues": []
+    }
+  },
+  "line_items": [],
+  "checks": [
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "detail": "2024-09-05"
+    }
+  ],
+  "warnings": [
+    "cannot_cross_check_arithmetic: original/revised contract sum not both found"
+  ],
+  "validation": {
+    "valid": false,
+    "errors": [
+      "missing_required: project_name"
+    ],
+    "warnings": []
+  },
+  "overall_confidence": 0.0,
+  "needs_review": true,
+  "review_reasons": [
+    "change_amount",
+    "change_order_number",
+    "project_name"
+  ]
+}

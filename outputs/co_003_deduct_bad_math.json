@@ -1,0 +1,138 @@
+{
+  "source": "co_003_deduct_bad_math.txt",
+  "fields": {
+    "change_order_number": {
+      "value": "PCO-0031",
+      "confidence": 0.94,
+      "evidence": "CHANGE ORDER NUMBER: PCO-0031",
+      "line": 1,
+      "issues": []
+    },
+    "project_name": {
+      "value": "Maple Grove Elementary Renovation",
+      "confidence": 0.92,
+      "evidence": "Project: Maple Grove Elementary Renovation",
+      "line": 3,
+      "issues": []
+    },
+    "project_number": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "date": {
+      "value": "2024-06-02",
+      "confidence": 0.93,
+      "evidence": "Date of Issuance: 2024-06-02",
+      "line": 2,
+      "issues": []
+    },
+    "owner": {
+      "value": "Maple Grove School District",
+      "confidence": 0.92,
+      "evidence": "Owner: Maple Grove School District",
+      "line": 4,
+      "issues": []
+    },
+    "contractor": {
+      "value": "Keystone Builders",
+      "confidence": 0.92,
+      "evidence": "Contractor: Keystone Builders",
+      "line": 5,
+      "issues": []
+    },
+    "description": {
+      "value": "Deduct ceramic tile in restrooms; substitute sealed concrete floor per owner value-engineering request.",
+      "confidence": 0.92,
+      "evidence": "Description:",
+      "line": 7,
+      "issues": []
+    },
+    "reason_for_change": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "original_contract_sum": {
+      "value": 2000000.0,
+      "confidence": 0.495,
+      "evidence": "Original Contract Sum:  $2,000,000.00",
+      "line": 11,
+      "issues": [
+        "fails_contract_sum_arithmetic"
+      ]
+    },
+    "prior_change_orders_total": {
+      "value": null,
+      "confidence": 0.0,
+      "evidence": null,
+      "line": null,
+      "issues": [
+        "not_found"
+      ]
+    },
+    "change_amount": {
+      "value": -15000.0,
+      "confidence": 0.421,
+      "evidence": "Total Deduct:  $15,000.00",
+      "line": 12,
+      "issues": [
+        "sign_inferred_from_keyword",
+        "fails_contract_sum_arithmetic",
+        "sign_may_be_flipped"
+      ]
+    },
+    "revised_contract_sum": {
+      "value": 2015000.0,
+      "confidence": 0.495,
+      "evidence": "New Contract Sum:  $2,015,000.00",
+      "line": 13,
+      "issues": [
+        "fails_contract_sum_arithmetic"
+      ]
+    },
+    "schedule_change_days": {
+      "value": 0,
+      "confidence": 0.85,
+      "evidence": "$2,015,000.00  No change in contract time.",
+      "line": 15,
+      "issues": []
+    }
+  },
+  "line_items": [],
+  "checks": [
+    {
+      "name": "contract_sum_arithmetic",
+      "passed": false,
+      "detail": "2000000.00 + 0 + -15000.00 = 1985000.00 vs stated 2015000.00"
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "detail": "2024-06-02"
+    }
+  ],
+  "warnings": [],
+  "validation": {
+    "valid": false,
+    "errors": [
+      "business: contract sum arithmetic does not reconcile (2000000.00 + 0 + -15000.00 = 1985000.00 vs stated 2015000.00)"
+    ],
+    "warnings": []
+  },
+  "overall_confidence": 0.421,
+  "needs_review": true,
+  "review_reasons": [
+    "change_amount",
+    "original_contract_sum",
+    "revised_contract_sum"
+  ]
+}
